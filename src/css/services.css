@@ -1,0 +1,153 @@
+/* ------------------------------------ */
+/*            SECTION LAYOUT            */
+/* ------------------------------------ */
+.program-section>.container {
+  display: grid;
+  gap: 6rem;
+}
+
+
+/* ------------------------------------ */
+/*           CARD STRUCTURE             */
+/* ------------------------------------ */
+.program-card {
+  display: grid;
+  gap: 4rem;
+}
+
+.program-card-default {
+  grid-template-columns: 1fr 8fr;
+}
+
+.program-card-mirror {
+  grid-template-columns: 8fr 1fr;
+}
+
+
+/* ------------------------------------ */
+/*         IMAGE & CONTENT AREA         */
+/* ------------------------------------ */
+.program-card>img,
+.program-content-wrapper {
+  border-radius: 20px;
+}
+
+.program-card>img {
+  width: 385px;
+  height: 100%;
+}
+
+.program-content-wrapper {
+  display: grid;
+  background-color: #2D2D2D;
+  color: white;
+}
+
+.program-content-wrapper-default {
+  grid-template-columns: 100px 6fr;
+}
+
+.program-content-wrapper-mirror {
+  grid-template-columns: 6fr 100px;
+}
+
+
+/* ------------------------------------ */
+/*              TEXT STYLES             */
+/* ------------------------------------ */
+.program-title {
+  margin-bottom: 10px;
+}
+
+.program-description {
+  color: #DCDCDC;
+  margin-bottom: 10px;
+}
+
+
+/* ------------------------------------ */
+/*           LEFT SIDE SECTION          */
+/* ------------------------------------ */
+.program-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.program-line {
+  width: 5px;
+  height: 90%;
+  background-color: white;
+  position: relative;
+  border-radius: 5px;
+}
+
+.program-line::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 25%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: red;
+  border-radius: 5px;
+}
+
+.program-indicator {
+  width: 30px;
+  background-color: wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ------------------------------------ */
+/*            CIRCLE STYLES             */
+/* ------------------------------------ */
+.program-circle {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  display: grid;
+  place-items: center;
+}
+
+.program-circle-default {
+  left: -40px;
+}
+
+.program-circle-mirror {
+  right: -40px;
+}
+
+
+/* ------------------------------------ */
+/*          RIGHT SIDE CONTENT          */
+/* ------------------------------------ */
+.program-content-default {
+  padding: 20px 0 20px 0;
+}
+
+.program-content-mirror {
+  padding: 20px 0 20px 20px;
+}
+
+
+.cta-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFC4AB66;
+  height: 120px;
+}
+
+.arrow-down>svg {
+  width: 38px;
+  color: #FF6200;
+}

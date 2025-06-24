@@ -1,0 +1,53 @@
+/* OUR APPROCH */
+
+.our-approach-container {
+  display: grid;
+  gap: 3rem;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.approach-heading {
+  text-align: center;
+}
+
+.approach-subtitle {
+  margin-top: 40px;
+}
+
+.approach-title {
+  margin-bottom: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.approach-title::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10%;
+  height: 4px;
+  background-color: red;
+}
+
+.approach-intro,
+.approach-core {
+  color: #4B4B4B;
+}
+
+.approach-core {
+  display: grid;
+  gap: 1rem;
+}
+
+.our-approach-circle {
+  width: 200px;
+  height: 200px;
+  background-color: #FF620080;
+  position: absolute;
+  right: -15%;
+  bottom: 5%;
+  border-radius: 50%;
+}

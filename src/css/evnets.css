@@ -53,6 +53,46 @@
   border-radius: 15px;
 }
 
+
+
+/* EVENT DIALOG STYLE */
+.event-dialog-body {
+  display: grid;
+  gap: 2rem;
+  color: #696969;
+}
+
+.event-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 2rem;
+  color: #000;
+}
+
+.event-dialog-datetime>span {
+  font-size: 0.9rem;
+}
+
+.event-tags,
+.event-tag {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+.tag-circle-red {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+
+
+
 /* ✅ Tablet & smaller: 1-column layout for upcoming events */
 @media (max-width: 940px) {
   .event-card {
@@ -85,6 +125,15 @@
   /* ✅ Responsive: 2 cards per row for recent events */
   .recent-events-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+
+
+
+  /* event dialog header */
+  .event-dialog-header {
+    flex-direction: column;
+    align-items: start;
   }
 }
 

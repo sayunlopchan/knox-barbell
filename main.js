@@ -37,3 +37,38 @@ document.addEventListener("click", (e) => {
     closeSlidebar();
   }
 });
+
+// dialog
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("toggle-dialog");
+  const dialog = document.getElementById("dialog");
+  const closeBtns = document.querySelectorAll(".dialog-close-btn");
+
+  function closeDialog() {
+    dialog.classList.add("closing", "fade-out");
+
+    const duration = 300; // in ms, must match animation duration
+    setTimeout(() => {
+      dialog.classList.add("hidden");
+      dialog.classList.remove("closing", "fade-out");
+    }, duration);
+  }
+
+  if (toggleBtn && dialog && closeBtns.length > 0) {
+    toggleBtn.addEventListener("click", () => {
+      dialog.classList.remove("hidden");
+    });
+
+    closeBtns.forEach((btn) => {
+      btn.addEventListener("click", closeDialog);
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === dialog) {
+        closeDialog();
+      }
+    });
+  } else {
+    console.warn("Some dialog elements are missing in the DOM.");
+  }
+});

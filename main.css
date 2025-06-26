@@ -123,6 +123,100 @@ input::placeholder {
   border-bottom: 5px solid red;
 }
 
+
+
+
+/* DIALOG START*/
+.dialog {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.dialog.hidden {
+  display: none;
+}
+
+.dialog-content {
+  max-width: 800px;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+  transform: scale(0.95);
+  opacity: 0;
+  animation: scaleIn 0.3s ease forwards;
+}
+
+/* Open animations */
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  to {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Close animations */
+.dialog.closing .dialog-content {
+  animation: scaleOut 0.3s ease forwards;
+}
+
+.dialog.fade-out {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  to {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.dialog-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* DIALOG END */
+
+
+
+
+
+
+
 /* BUTTONS */
 button {
   border: none;
@@ -180,8 +274,6 @@ button {
 }
 
 
-
-
 /* Click Animation */
 button:active {
   transform: scale(0.95);
@@ -218,9 +310,8 @@ section {
 
 
 /* HEADER NAV-START*/
-.logo {
-  width: 100px;
-  height: 100px;
+.active-page {
+  border-bottom: 2px solid var(--btn-primary);
 }
 
 header {
@@ -232,6 +323,11 @@ header {
   right: 0;
   top: 0;
   z-index: 10;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
 }
 
 .nav-wrapper {

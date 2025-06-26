@@ -151,3 +151,18 @@
   width: 38px;
   color: #FF6200;
 }
+
+
+
+/* MEDIA QUERY */
+@media (max-width: 1180px) {
+  .program-card {
+    grid-template-columns: 1fr;
+  }
+
+  .program-card>img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 940px) {}

@@ -5,11 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knox Barbell</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="./src/css/services.css">
+    <link rel="icon" type="image/x-icon" href="src/public/favicon.ico">
+
     <!-- CDN for Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <!-- styles -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./src/css/services.css">
+
+    <!-- script -->
+    <script defer src="main.js"></script>
   </head>
 
   <body>
@@ -65,7 +72,7 @@
               <a href="events.html">Events</a>
             </li>
             <li>
-              <a href="faq.html">FAQs</a>
+              <a href="faqs.html">FAQs</a>
             </li>
             <li>
               <a href="contact.html">Contact us</a>
@@ -89,14 +96,51 @@
     <main>
       <!-- SLIDEBAR -->
       <div class="slidebar">
-        content here
+        <!-- Sidebar Header -->
+        <div class="slidebar-header">
+          <img src="/src/img/Knox.png" alt="Logo" class="slidebar-logo">
+          <h2 class="slidebar-title">Knox Barbell</h2>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="slidebar-nav">
+          <ul>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/applications.html">Application</a></li>
+            <li><a href="/announcements.html">Announcements</a></li>
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/events.html">Events</a></li>
+            <li><a href="/faqs.html">FAQs</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Action Button -->
+        <div class="slidebar-action">
+          <button class="btn btn-primary">Join Now</button>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="slidebar-social">
+          <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank" aria-label="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="slidebar-footer">
+          © 2025 Knox Barbell
+        </div>
       </div>
       <div class="slide-bg-overlay"></div>
 
       <!-- HERO -->
       <section class="hero-section border-bottom">
         <div class="hero-content">
-          <h1 class="hero-title">PUSH YOUR LIMITS <br> WITH US</h1>
+          <h1 class="hero-title">No Answer To Your Questions?
+            <br>
+            Email or Call us
+          </h1>
           <button class="btn btn-primary-filled">JOIN NOW</button>
         </div>
       </section>
@@ -181,6 +225,7 @@
       </section>
       <!-- label -->
 
+      <!-- programs -->
       <section class="program-section">
         <div class="container">
           <!-- program cards -->
@@ -290,7 +335,7 @@
       <section class="blog-section container">
         <div class="blog-header">
           <h2>
-            <span class="blog-highlight">GET RESULTS</span><br>
+            <span class="blog-highlight">GET RESULTS</span>
             TIPS & INSIGHTS
           </h2>
           <p>Get the latest training tips & performance insights from the team at Knox Barbell</p>
@@ -340,19 +385,21 @@
 
         </div>
       </section>
+
     </main>
 
 
-
+    <!-- FOOTER -->
     <footer class="site-footer">
       <div class="container">
+        <!-- MAIN FOOTER -->
         <div class="footer-content">
-          <section class="footer-logo-section">
+          <div class="footer-logo-section">
             <img src="/src/img/Knox.png" alt="footer-logo" class="logo">
             <p>Whether you want to get in shape with a personalized fitness training plan, break a sweat in a team
               environment</p>
-          </section>
-          <section class="footer-links-section">
+          </div>
+          <div class="footer-links-section">
             <h6>Quick Links</h6>
             <ul>
               <li><a href="">Home</a></li>
@@ -363,12 +410,12 @@
               <li><a href="">Terms & Conditions</a></li>
               <li><a href="">Privacy Policy</a></li>
             </ul>
-          </section>
-          <section class="footer-newsletter-section">
+          </div>
+          <div class="footer-newsletter-section">
             <h6>Newsletter</h6>
             <div class="newsletter-input-wrapper">
               <input type="text" placeholder="xzy@example.com">
-              <button class="btn btn-primary">Submit</button>
+              <button class="btn btn-primary-filled subscribe-btn">Subscribe</button>
             </div>
             <h6>Get in Touch</h6>
             <ul>
@@ -376,9 +423,10 @@
               <li><a href="">info@knoxbarbell.com</a></li>
               <li><a href="">071-123456 , 9715428630</a></li>
             </ul>
-          </section>
+          </div>
         </div>
       </div>
+      <!-- FOOTER COPYRIGHT & LICENSE -->
       <div class="footer-bottom">
         <div class="container">
           <span>©2025 Knox Barbell. All Rights Reserved</span>
@@ -386,6 +434,9 @@
         </div>
       </div>
     </footer>
+
+
+
     </main>
   </body>
 

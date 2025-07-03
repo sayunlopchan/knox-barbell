@@ -73,5 +73,5 @@ This website and all associated materials are the proprietary property of Knox B
 ---
 
 <p align="center">
-  Professionally developed by <a href="https://cobranddigital.com">Cobrand Digital</a> with ❤️
+  Professionally developed by Sayun Lopchan under <a href="https://cobranddigital.com">Cobrand Digital</a> with ❤️
 </p>

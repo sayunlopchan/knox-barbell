@@ -2,15 +2,35 @@
 
 
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #34495e;
-  --light-color: #ecf0f1;
-  --dark-color: #2c3e50;
-  --border-radius: 16px;
-  --btn-primary: #CB0000;
-  --btn-border-radius: 5px;
+  /* Base Colors */
+  --white: #FFFFFF;
+  --black: #000000;
+  --red: #CB0000;
 
-  --orange-color: #FF6200;
+
+  /* Highlight Colors */
+  --highlight-color: #FF6200;
+  --highlight-bg: #FFC4AB66;
+
+  /* Background Colors */
+  --bg-light: #F1F1F1;
+  --bg-dark: #1B1F27;
+  --bg-footer-light: #D8D8D8;
+  --bg-alt: #272D38;
+
+  /* Text Colors */
+  --heading-primary: #000000;
+  --heading-secondary: ;
+  --paragraph-primary: #6F6F6F;
+  --paragraph-secondary: #DADADA;
+  --nav-link-primary: #DCDCDC;
+  --nav-link-secondary: ;
+
+  /* Button Colors */
+  --btn-red: #CB0000;
+  --btn-white: #FFFFFF;
+
+
 
 
   /* heading */
@@ -43,7 +63,7 @@ h2 {
 
 h3 {
   font-size: var(--font-h3);
-  line-height: 1.3;
+  line-height: 1.1;
 }
 
 h4 {
@@ -77,21 +97,22 @@ input {
   outline: none;
   border: none;
   background: transparent;
-  color: white;
+  color: var(--white);
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--white);
   /* Optional: better than no border at all */
 }
 
 input::placeholder {
-  color: white;
+  color: var(--white);
   opacity: 1;
 }
 
-.border-bottom {
-  border-bottom: 10px solid #CB0000;
+.border-bottom,
+.border-top {
+  border-bottom: 10px solid var(--red);
 }
 
 /* bg-images */
@@ -120,7 +141,7 @@ input::placeholder {
 }
 
 .border-bottom {
-  border-bottom: 5px solid red;
+  border-bottom: 5px solid var(--red);
 }
 
 
@@ -143,7 +164,7 @@ input::placeholder {
 
 .dialog-content {
   max-width: 800px;
-  background: white;
+  background: var(--white);
   padding: 2rem;
   border-radius: 10px;
   position: relative;
@@ -239,23 +260,23 @@ button {
 
 /* Primary Outlined Button */
 .btn-primary {
-  background: white;
-  color: var(--btn-primary);
-  border: 2px solid var(--btn-primary);
+  background: var(--white);
+  color: var(--btn-red);
+  border: 2px solid var(--btn-red);
 }
 
 /* Primary Filled Button */
 .btn-primary-filled {
-  background: var(--btn-primary);
-  color: white;
+  background: var(--btn-red);
+  color: var(--white);
   border: none;
 }
 
 
 .btn-secondary {
   position: relative;
-  background-color: red;
-  color: white;
+  background-color: var(--btn-red);
+  color: var(--white);
   border: none;
   padding: 0.6rem 1.2rem;
   cursor: pointer;
@@ -281,11 +302,11 @@ button:active {
 
 
 .highlight-red {
-  color: var(--btn-primary);
+  color: var(--red);
 }
 
 .highlight-orange {
-  color: var(--orange-color);
+  color: var(--highlight-color);
 }
 
 .width-60 {
@@ -311,7 +332,7 @@ section {
 
 /* HEADER NAV-START*/
 .active-page {
-  border-bottom: 2px solid var(--btn-primary);
+  border-bottom: 2px solid var(--btn-red);
 }
 
 header {
@@ -336,7 +357,7 @@ header {
 
 .nav-wrapper>.top-nav a,
 .nav-wrapper>.bottom-nav a {
-  color: white;
+  color: var(--white);
 }
 
 .nav-wrapper>.top-nav,
@@ -372,7 +393,7 @@ header {
 .hamburger span {
   display: block;
   height: 4px;
-  background: white;
+  background: var(--white);
   transition: 0.3s;
 }
 
@@ -382,7 +403,7 @@ header {
 .slidebar {
   height: 100vh;
   width: 300px;
-  background-color: white;
+  background-color: var(--white);
 
   position: fixed;
   top: 0;
@@ -465,14 +486,13 @@ header {
 }
 
 .slidebar-social a:hover {
-  color: var(--btn-primary);
+  color: var(--btn-red);
 }
 
 .slidebar-footer {
   padding: 1rem;
   text-align: center;
   font-size: 0.9rem;
-  color: var(--secondary-color);
   margin-top: auto;
 }
 
@@ -528,7 +548,7 @@ header {
 .hero-title {
   position: relative;
   /* required for ::after to position correctly */
-  color: white;
+  color: var(--white);
   font-size: 50px;
   text-align: end;
   padding-right: 20px;
@@ -551,7 +571,7 @@ header {
 /* FORM start */
 
 .trial-offer-section>.container {
-  color: white;
+  color: var(--white);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
@@ -577,7 +597,7 @@ header {
   top: 0;
   height: 100%;
   width: 5px;
-  background-color: var(--orange-color);
+  background-color: var(--highlight-color);
 }
 
 
@@ -596,7 +616,7 @@ header {
 }
 
 .trial-heading {
-  background-color: white;
+  background-color: var(--white);
   color: black;
   padding: 1rem;
   text-align: center;
@@ -618,7 +638,7 @@ header {
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid white;
+  border-top: 10px solidvar(--white);
   /* color of the triangle */
 }
 
@@ -640,14 +660,14 @@ header {
 .trial-form .form-group input {
   padding: 10px;
   background: transparent;
-  color: white;
+  color: var(--white);
   width: 100%;
-  border: 1px solid white;
+  border: 1px solidvar(--white);
   box-sizing: border-box;
 }
 
 .trial-form .form-group input::placeholder {
-  color: white;
+  color: var(--white);
   opacity: 1;
   /* Ensures full opacity */
 }
@@ -660,8 +680,8 @@ header {
 .cta-section {
   text-align: center;
   padding: 3rem 1rem;
-  background-color: #1B1F27;
-  color: white;
+  background-color: var(--bg-dark);
+  color: var(--white);
 }
 
 .cta-heading {
@@ -696,7 +716,7 @@ header {
   font-size: 30px;
   position: relative;
   padding-left: 1rem;
-  border-right: 2px solid var(--orange-color);
+  border-right: 4px solid var(--highlight-color);
 }
 
 
@@ -730,7 +750,7 @@ header {
 }
 
 .blog-date {
-  color: #4B4B4B;
+  color: var(--bg-alt);
 }
 
 .blog-text-wrapper {
@@ -746,22 +766,22 @@ header {
 
 /* FOOTER BASE STYLES */
 .site-footer {
-  background-color: #1B1F27;
-  color: white;
+  background-color: var(--bg-alt);
+  color: var(--white);
   padding: 2rem 0;
   font-family: 'Poppins', sans-serif;
-  border-top: 4px solid gainsboro;
+  border-top: 4px solid var(--bg-footer-light);
 }
 
 .site-footer a,
 .site-footer p {
-  color: #DCDCDC;
+  color: var(--nav-link-primary);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .site-footer a:hover {
-  color: #ffffff;
+  color: var(--white);
 }
 
 .footer-content {
@@ -773,7 +793,7 @@ header {
 .footer-logo-section .logo {
   max-width: 160px;
   margin-bottom: 1rem;
-  background-color: gainsboro;
+  background-color: var(--bg-footer-light);
 }
 
 
@@ -868,7 +888,7 @@ header {
   .blog-header h2 {
     padding-left: 0;
     border-right: none;
-    border-bottom: 2px solid var(--orange-color);
+    border-bottom: 4px solid var(--highlight-color);
   }
 
   /* Navigation */

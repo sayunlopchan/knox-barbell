@@ -1,0 +1,263 @@
+/* Location and Map Section */
+.location-map-section {
+  color: #272D38;
+  display: grid;
+  gap: 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Map and Details Layout - Stack Vertically */
+
+
+/* Responsive Map Embed */
+.map-embed-container {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.map-embed-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Location Details - Centered */
+.location-details {
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.location-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.location-address {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.btn-primary-filled {
+  background-color: #CB0000;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-primary-filled:hover {
+  background-color: #a60000;
+}
+
+
+/* CONTACT SECTION */
+.contact-section {
+  background-color: #272D38;
+}
+
+.contact-section,
+a {
+  color: white;
+}
+
+
+.contact-section>.container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 2rem;
+}
+
+
+/* contact-info-wrapper */
+.contact-info-wrapper {
+  display: grid;
+  gap: 2rem;
+}
+
+
+/* socials */
+.social-links {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.social-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-wrapper>a {
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  border-radius: 5px;
+  background: linear-gradient(to bottom right, #4D5970, #272D38);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+
+/* contact-details */
+.contact-item,
+.contact-details,
+.contact-text {
+  display: grid;
+}
+
+.contact-details {
+  gap: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #484848F2;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.contact-label {
+  font-size: 0.8rem;
+}
+
+
+/* form */
+.contact-form-wrapper {
+  background-color: #FFFFFF08;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #272D38;
+}
+
+/* Full-width items span across both columns */
+.full-width {
+  grid-column: span 2;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  color: white;
+}
+
+
+/* CONTACT SUPPORT SECTION */
+.contact-support-wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+
+.contact-support-wrapper,
+.contact-support-action {
+  justify-content: center;
+  align-content: center;
+}
+
+/* Contact Section Responsive Layout */
+@media (max-width: 768px) {
+  .contact-section>.container {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+
+  .social-wrapper {
+    justify-content: center;
+  }
+
+  .contact-item {
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .contact-icon {
+    align-self: flex-end;
+  }
+
+
+  .contact-support-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-support-action {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Optional: Improve spacing for small screens */
+@media (max-width: 480px) {
+
+  .contact-form-wrapper,
+  .contact-info-wrapper {
+    padding: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+
+  .social-wrapper>a {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+}

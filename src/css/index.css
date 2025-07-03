@@ -1,12 +1,13 @@
 .training-labels-section {
-  background-color: var(--btn-primary);
-  color: white;
+  background-color: var(--btn-red);
+  color: var(--white);
   overflow: hidden;
   height: 60px;
   display: flex;
   align-items: center;
   position: relative;
 }
+
 
 .training-labels-track {
   display: flex;
@@ -34,8 +35,8 @@
 
 /* img-collaspe */
 .img-collaspe {
-  background: #272D38;
-  color: white;
+  background: var(--bg-alt);
+  color: var(--white);
 }
 
 .img-collaspe>.container>p {
@@ -95,7 +96,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  color: white;
+  color: var(--white);
   z-index: 2;
   background: rgba(0, 0, 0, 0.4);
   padding: 10px;
@@ -129,8 +130,8 @@
 /* WHY CHOOSE US SECTION */
 
 .why-choose-section {
-  color: white;
-  background-color: #222;
+  color: var(--white);
+  background-color: var(--bg-dark);
   font-family: Arial, sans-serif;
 }
 
@@ -180,7 +181,7 @@
   justify-content: space-between;
   gap: 0.75rem;
   cursor: pointer;
-  color: white;
+  color: var(--white);
   user-select: none;
 }
 
@@ -207,7 +208,6 @@
 
 .faq-item i {
   transition: transform 0.3s ease;
-  color: white;
   font-size: 0.8rem;
 }
 
@@ -255,8 +255,8 @@
 /* RATINGS */
 /* TESTIMONIALS SECTION */
 .testimonials-section {
-  background-color: #272D38;
-  color: white;
+  background-color: var(--bg-alt);
+  color: var(--white);
 }
 
 .testimonials-container {
@@ -274,13 +274,6 @@
   border-bottom: dashed;
   padding-bottom: 1rem;
 }
-
-/* .testimonial-heading>h3 {
-  font-size: 50px;
-  line-height: 3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-} */
 
 .testimonial-metrics {
   display: flex;

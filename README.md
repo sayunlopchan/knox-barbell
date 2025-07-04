@@ -2,11 +2,12 @@
 
 ![Knox Barbell Banner](https://via.placeholder.com/1200x400?text=Knox+Barbell+Gym) <!-- Replace with actual banner image -->
 
-A modern, responsive front-end website developed for Knox Barbell gym located in Bhairahawa, Nepal. Built with pure HTML, CSS, and JavaScript by Cobrand Digital.
+A modern, responsive front-end website developed for Knox Barbell gym located in Bhairahawa, Nepal. Built with pure HTML, CSS, and JavaScript.
 
 🔗 **Live Demo:** [https://knox-barbell.vercel.app/](https://knox-barbell.vercel.app/)  
 🏢 **Development Agency:** [Cobrand Digital](https://cobranddigital.com)  
 👨‍💻 **Lead Developer:** [Sayun Lopchan](https://github.com/sayunlopchan)
+    **UI:** [Chanam Kumaar Rana]
 
 ## 🏋️‍♂️ Project Overview
 
@@ -14,7 +15,7 @@ Knox Barbell is a premium gym facility in Bhairahawa, Nepal specializing in stre
 
 ### Key Features Implemented:
 - Fully responsive design (mobile, tablet, desktop)
-- Interactive event management system
+- Interactive event integration
 - Newsletter subscription integration
 - Online membership applications
 - Real-time announcements section

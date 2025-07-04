@@ -4,8 +4,8 @@ A modern, responsive front-end website developed for Knox Barbell gym located in
 
 🔗 **Live Demo:** [https://knox-barbell.vercel.app/](https://knox-barbell.vercel.app/)  
 🏢 **Development Agency:** [Cobrand Digital](https://cobranddigital.com)  
-👨‍💻 **Lead Developer:** [Sayun Lopchan](https://github.com/sayunlopchan)
-    **UI:** [Chanam Kumaar Rana]
+👨‍💻 **Lead Developer:** [Sayun Lopchan](https://github.com/sayunlopchan)  
+🎨 **UI Designer:** [Chanam Kumaar Rana] ✨
 
 ## 🏋️‍♂️ Project Overview
 
@@ -72,5 +72,6 @@ This website and all associated materials are the proprietary property of Knox B
 ---
 
 <p align="center">
-  Professionally developed by Sayun Lopchan under <a href="https://cobranddigital.com">Cobrand Digital</a> with ❤️
+  Professionally developed by <a href="https://github.com/sayunlopchan">Sayun Lopchan</a> with ✨ UI by Chanam Kumaar Rana <br>
+  under <a href="https://cobranddigital.com">Cobrand Digital</a> with ❤️
 </p>

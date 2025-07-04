@@ -1,7 +1,5 @@
 # Knox Barbell - Gym Website
 
-![Knox Barbell Banner](https://via.placeholder.com/1200x400?text=Knox+Barbell+Gym) <!-- Replace with actual banner image -->
-
 A modern, responsive front-end website developed for Knox Barbell gym located in Bhairahawa, Nepal. Built with pure HTML, CSS, and JavaScript.
 
 🔗 **Live Demo:** [https://knox-barbell.vercel.app/](https://knox-barbell.vercel.app/)  

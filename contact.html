@@ -10,6 +10,7 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="/src/css/contact.css">
+    <link rel="stylesheet" href="/src/css/spinner.css">
     <link rel="stylesheet" href="main.css">
 
     <!-- CDN for Font Awesome -->
@@ -18,9 +19,16 @@
 
     <!-- scripts -->
     <script defer src="main.js"></script>
+
+    <!-- contain api -->
+    <script defer src="/src/js/global.js"></script>
+    <!-- and passed to contact/newsletter logic -->
+    <script defer src="/src/js/contact.js"></script>
+    <script defer src="/src/js/newsletter.js"></script>
   </head>
 
   <body>
+
     <header class="container">
       <div class="logo-wrapper">
         <a href="/">
@@ -234,7 +242,7 @@
 
           <!-- contact form -->
           <div class="contact-form-wrapper">
-            <form>
+            <form id="contactForm" onsubmit="sendEmail(event)">
               <div class="form-row">
                 <div class="form-group">
                   <label for="FN">First Name</label>
@@ -275,7 +283,6 @@
             </form>
           </div>
 
-
         </div>
       </section>
 
@@ -301,56 +308,71 @@
 
 
 
-      <!-- FOOTER -->
-      <footer class="site-footer">
-        <div class="container">
-          <!-- MAIN FOOTER -->
-          <div class="footer-content">
-            <div class="footer-logo-section">
-              <img src="/src/img/Knox.png" alt="footer-logo" class="logo" />
-              <p>
-                Whether you want to get in shape with a personalized fitness
-                training plan, break a sweat in a team environment
-              </p>
-            </div>
-            <div class="footer-links-section">
-              <h6>Quick Links</h6>
-              <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Events</a></li>
-                <li><a href="">Contact Us</a></li>
-                <li><a href="">FAQs</a></li>
-                <li><a href="">Terms & Conditions</a></li>
-                <li><a href="">Privacy Policy</a></li>
-              </ul>
-            </div>
-            <div class="footer-newsletter-section">
-              <h6>Newsletter</h6>
-              <div class="newsletter-input-wrapper">
-                <input type="text" placeholder="xzy@example.com" />
-                <button class="btn btn-primary-filled subscribe-btn">
-                  Subscribe
-                </button>
-              </div>
-              <h6>Get in Touch</h6>
-              <ul>
-                <li><a href="">Siddarthanagar - 08, Bhairahawa</a></li>
-                <li><a href="">info@knoxbarbell.com</a></li>
-                <li><a href="">071-123456 , 9715428630</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- FOOTER COPYRIGHT & LICENSE -->
-        <div class="footer-bottom">
-          <div class="container">
-            <span>©2025 Knox Barbell. All Rights Reserved</span>
-            <span>Follow us</span>
-          </div>
-        </div>
-      </footer>
+
     </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <!-- MAIN FOOTER -->
+        <div class="footer-content">
+          <div class="footer-logo-section">
+            <img src="/src/img/Knox.png" alt="footer-logo" class="logo" />
+            <p>
+              Whether you want to get in shape with a personalized fitness
+              training plan, break a sweat in a team environment
+            </p>
+          </div>
+          <div class="footer-links-section">
+            <h6>Quick Links</h6>
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Events</a></li>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">FAQs</a></li>
+              <li><a href="">Terms & Conditions</a></li>
+              <li><a href="">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-newsletter-section">
+            <h6>Newsletter</h6>
+            <div class="newsletter-input-wrapper">
+              <input type="email" id="newsletterEmail" placeholder="xzy@example.com" required />
+              <button class="btn btn-primary-filled subscribe-btn" onclick="subscribeNewsletter(event)">
+                Subscribe
+              </button>
+            </div>
+
+            <h6>Get in Touch</h6>
+            <ul>
+              <li><a href="">Siddarthanagar - 08, Bhairahawa</a></li>
+              <li><a href="">info@knoxbarbell.com</a></li>
+              <li><a href="">071-123456 , 9715428630</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- FOOTER COPYRIGHT & LICENSE -->
+      <div class="footer-bottom">
+        <div class="container">
+          <span>©2025 Knox Barbell. All Rights Reserved</span>
+          <span>Follow us</span>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- spinner modal -->
+    <div id="emailModal" class="modal">
+      <div id="modalContent" class="modal-content"></div>
+    </div>
+
+    <div id="newsletterModal" class="modal">
+      <div id="newsletterModalContent" class="modal-content"></div>
+    </div>
+
+
   </body>
 
 </html>

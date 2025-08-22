@@ -1,0 +1,121 @@
+/* Modal Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* solid black overlay */
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Box */
+.modal-content {
+  background-color: #ffffff;
+  /* solid white */
+  border-radius: 12px;
+  padding: 30px 25px;
+  width: 90%;
+  max-width: 360px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+/* Spinner Loader */
+.spinner {
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #2563eb;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
+
+/* Text Feedback */
+.modal-status-text {
+  font-size: 17px;
+  font-weight: 500;
+  margin-top: 10px;
+  color: black;
+}
+
+.success-text {
+  color: #16a34a;
+}
+
+.error-text {
+  color: #dc2626;
+}
+
+/* Icons */
+.success-icon,
+.error-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 28px;
+  margin: 0 auto 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-icon {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+.error-icon {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+/* Button */
+.modal-content>button {
+  margin-top: 12px;
+  padding: 10px 20px;
+  background-color: #dc2626;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-content>button:hover {
+  background-color: #b91c1c;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -12,11 +12,17 @@
 
     <!-- stylkes -->
     <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="/src/css/evnets.css" />
+    <link rel="stylesheet" href="/src/css/events.css" />
+    <link rel="stylesheet" href="/src/css/spinner.css" />
 
 
     <!-- script -->
     <script defer src="main.js"></script>
+    <!-- contain api -->
+    <script defer src="/src/js/global.js"></script>
+    <!-- and passed to event/newsletter logic -->
+    <script defer src="/src/js/event.js"></script>
+    <script defer src="/src/js/newsletter.js"></script>
   </head>
 
   <body>
@@ -148,60 +154,10 @@
           <h3>Upcoming Events</h3>
         </div>
 
-        <div class="upcoming-events-list">
-
-          <!-- event card -->
-          <div class="event-card">
-            <div class="event-date">
-              <h6>May 30, 2025</h6>
-              <span>10:00am - 3:00pm</span>
-            </div>
-            <div class="event-info">
-              <span class="event-label">Register Now!!</span>
-              <h6 class="event-title">UPCOMING EVENT TITLE GOES HERE THAT MIGHT BE LONG</h6>
-            </div>
-            <div class="event-button-wrapper">
-              <button class="btn btn-primary-filled btn-radius" id="toggle-dialog">
-                View Details
-              </button>
-            </div>
-          </div>
-
-
-          <!-- event card -->
-          <div class="event-card">
-            <div class="event-date">
-              <h6>May 30, 2025</h6>
-              <span>10:00am - 3:00pm</span>
-            </div>
-            <div class="event-info">
-              <span class="event-label">Register Now!!</span>
-              <h6 class="event-title">UPCOMING EVENT TITLE GOES HERE THAT MIGHT BE LONG</h6>
-            </div>
-            <div class="event-button-wrapper">
-              <button class="btn btn-primary-filled btn-radius" id="toggle-dialog">
-                View Details
-              </button>
-            </div>
-          </div>
-
-          <!-- event card -->
-          <div class="event-card">
-            <div class="event-date">
-              <h6>May 30, 2025</h6>
-              <span>10:00am - 3:00pm</span>
-            </div>
-            <div class="event-info">
-              <span class="event-label">Register Now!!</span>
-              <h6 class="event-title">UPCOMING EVENT TITLE GOES HERE THAT MIGHT BE LONG</h6>
-            </div>
-            <div class="event-button-wrapper">
-              <button class="btn btn-primary-filled btn-radius" id="toggle-dialog">
-                View Details
-              </button>
-            </div>
-          </div>
+        <div class="upcoming-events-list" id="upcomingEventsContainer">
+          <!-- Dynamic event cards will go here -->
         </div>
+
       </section>
 
       <!-- RECENT EVENTS -->
@@ -209,82 +165,14 @@
         <div class="recent-events-header">
           <h3>Recent Events</h3>
         </div>
-        <div class="recent-events-grid">
-
-          <div class="recent-event-card">
-            <div class="recent-event-image">
-              <!-- <img src="..." alt="Event image"> -->
-            </div>
-            <div class="recent-event-title">
-              <h4>Event Title Goes Here</h4>
-            </div>
-            <div class="recent-event-date">
-              <span>June 15, 2025</span>
-            </div>
-          </div>
-
-          <div class="recent-event-card">
-            <div class="recent-event-image">
-              <!-- <img src="..." alt="Event image"> -->
-            </div>
-            <div class="recent-event-title">
-              <h4>Event Title Goes Here</h4>
-            </div>
-            <div class="recent-event-date">
-              <span>June 15, 2025</span>
-            </div>
-          </div>
-
-          <div class="recent-event-card">
-            <div class="recent-event-image">
-              <!-- <img src="..." alt="Event image"> -->
-            </div>
-            <div class="recent-event-title">
-              <h4>Event Title Goes Here</h4>
-            </div>
-            <div class="recent-event-date">
-              <span>June 15, 2025</span>
-            </div>
-          </div>
-
-          <div class="recent-event-card">
-            <div class="recent-event-image">
-              <!-- <img src="..." alt="Event image"> -->
-            </div>
-            <div class="recent-event-title">
-              <h4>Event Title Goes Here</h4>
-            </div>
-            <div class="recent-event-date">
-              <span>June 15, 2025</span>
-            </div>
-          </div>
-
-          <div class="recent-event-card">
-            <div class="recent-event-image">
-              <!-- <img src="..." alt="Event image"> -->
-            </div>
-            <div class="recent-event-title">
-              <h4>Event Title Goes Here</h4>
-            </div>
-            <div class="recent-event-date">
-              <span>June 15, 2025</span>
-            </div>
-          </div>
-
-          <div class="recent-event-card">
-            <div class="recent-event-image">
-              <!-- <img src="..." alt="Event image"> -->
-            </div>
-            <div class="recent-event-title">
-              <h4>Event Title Goes Here</h4>
-            </div>
-            <div class="recent-event-date">
-              <span>June 15, 2025</span>
-            </div>
+        <div id="recentEventsWrapper">
+          <!-- no event data here -->
+          <div class="recent-events-grid" id="recentEventsContainer">
+            <!-- data here -->
           </div>
         </div>
-
       </section>
+
 
       <!-- Form -->
       <section class="trial-offer-section">
@@ -351,11 +239,12 @@
           <div class="footer-newsletter-section">
             <h6>Newsletter</h6>
             <div class="newsletter-input-wrapper">
-              <input type="text" placeholder="xzy@example.com" />
-              <button class="btn btn-primary-filled subscribe-btn">
+              <input type="email" id="newsletterEmail" placeholder="xzy@example.com" required />
+              <button class="btn btn-primary-filled subscribe-btn" onclick="subscribeNewsletter(event)">
                 Subscribe
               </button>
             </div>
+
             <h6>Get in Touch</h6>
             <ul>
               <li><a href="">Siddarthanagar - 08, Bhairahawa</a></li>
@@ -374,45 +263,16 @@
       </div>
     </footer>
 
-    <!--  DIALOG -->
+
+    <!-- spinner modal -->
+    <div id="newsletterModal" class="modal">
+      <div id="newsletterModalContent" class="modal-content"></div>
+    </div>
+
+    <!-- DIALOG -->
     <div id="dialog" class="dialog hidden">
       <div class="dialog-content">
-        <span class="dialog-close-btn dialog-close">&times;</span>
-        <div id="dialogBody" class="event-dialog-body">
-          <!-- Dynamic content start-->
-          <!-- event detail content -->
-          <div class="event-dialog-header">
-            <h5 class="event-dialog-title">UPCOMING EVENT TITLE GOES HERE THAT MIGHT BE LONG</h5>
-            <div class="event-dialog-datetime">
-              <h6 class="event-date">May 30, 2025</h6>
-              <span class="event-time">10:00am - 3:00pm</span>
-            </div>
-          </div>
-
-          <div class="event-dialog-body">
-            <p>At Knox Barbell, members receive annual contracts because we want to ensure that we work with you on your
-              fitness goals throughout the year to achieve the results you want.</p>
-            <p>At Knox Barbell, members receive annual contracts because we want to ensure.</p>
-
-            <div class="event-tags">
-              <p class="event-tag"> <span class="tag-circle-red"></span>TAG 1</p>
-              <p class="event-tag"> <span class="tag-circle-red"></span>TAG 2</p>
-              <p class="event-tag"> <span class="tag-circle-red"></span>TAG 3</p>
-            </div>
-
-            <div class="event-location">
-              <span class="venue-heading"> <strong>Venue</strong></span>
-              <p class="venue-address">Siddharthanagar - 08, Bank Colony</p>
-            </div>
-          </div>
-          <!-- event detail content -->
-          <!-- Dynamic content end-->
-
-          <div class="dialog-actions">
-            <button class="btn btn-primary-filled dialog-close-btn">Cancel</button>
-            <button class="btn btn-primary-filled">participate</button>
-          </div>
-        </div>
+        <div id="dialogBody"></div>
       </div>
     </div>
 

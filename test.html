@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Application Form</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .form-container {
+        padding: 40px;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+        font-size: 0.95rem;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e1e5e9;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: #f8f9fa;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #667eea;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      .file-input-container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .file-input {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+
+      .file-input-label {
+        display: block;
+        padding: 12px 15px;
+        background: #f8f9fa;
+        border: 2px dashed #667eea;
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #667eea;
+        font-weight: 500;
+      }
+
+      .file-input-label:hover {
+        background: #667eea;
+        color: white;
+      }
+
+      .file-preview {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+      }
+
+      .file-item {
+        position: relative;
+        border: 1px solid #e1e5e9;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        background: #f8f9fa;
+      }
+
+      .file-item img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 5px;
+      }
+
+      .file-item .remove-file {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 15px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+      }
+
+      .submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .response {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        display: none;
+      }
+
+      .response.success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+
+      .response.error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+
+      .loading {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .spinner {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #667eea;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 10px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .container {
+          margin: 10px;
+        }
+
+        .form-container {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Test Application Form</h1>
+        <p>Test the application creation endpoint with image uploads</p>
+      </div>
+
+      <div class="form-container">
+        <form id="applicationForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email (optional)</label>
+              <input type="text" id="email" name="email">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="citizenNumber">Citizen Number (optional)</label>
+              <input type="text" id="citizenNumber" name="citizenNumber">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact">Contact Number *</label>
+              <input type="tel" id="contact" name="contact" required>
+            </div>
+            <div class="form-group">
+              <label for="dateOfBirth">Date of Birth *</label>
+              <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="gender">Gender *</label>
+              <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="membershipDuration">Membership Duration (months) *</label>
+              <select id="membershipDuration" name="membershipDuration" required>
+                <option value="">Select Duration</option>
+                <option value="1">1 Month</option>
+                <option value="3">3 Months</option>
+                <option value="6">6 Months</option>
+                <option value="12">12 Months</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address *</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="emergencyContactName">Emergency Contact Name (optional)</label>
+              <input type="text" id="emergencyContactName" name="emergencyContactName">
+            </div>
+            <div class="form-group">
+              <label for="emergencyNumber">Emergency Contact Number (optional)</label>
+              <input type="tel" id="emergencyNumber" name="emergencyNumber">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="emergencyContactRelationship">Emergency Contact Relationship (optional)</label>
+            <input type="text" id="emergencyContactRelationship" name="emergencyContactRelationship">
+          </div>
+
+          <div class="form-group">
+            <label for="currentStartDate">Start Date *</label>
+            <input type="date" id="currentStartDate" name="currentStartDate" required>
+          </div>
+
+          <div class="form-group">
+            <label for="passportImage">Passport Size Photo (Optional)</label>
+            <div class="file-input-container">
+              <input type="file" id="passportImage" name="passportImage" class="file-input" accept="image/*">
+              <label for="passportImage" class="file-input-label">
+                📷 Click to select passport photo (JPG, PNG, GIF - Max 5MB)
+              </label>
+            </div>
+            <div id="filePreview" class="file-preview"></div>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            Submit Application
+          </button>
+        </form>
+
+        <div class="loading" id="loading">
+          <div class="spinner"></div>
+          <p>Submitting application...</p>
+        </div>
+
+        <div class="response" id="response"></div>
+      </div>
+    </div>
+
+    <script>
+      // Set default start date to today
+      document.getElementById('currentStartDate').valueAsDate = new Date();
+
+      // File preview functionality
+      const fileInput = document.getElementById('passportImage');
+      const filePreview = document.getElementById('filePreview');
+      let selectedFile = null;
+
+      fileInput.addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        filePreview.innerHTML = '';
+        selectedFile = null;
+        if (!file) return;
+        // Validate file size (5MB)
+        if (file.size > 5 * 1024 * 1024) {
+          alert(`File ${file.name} is too large. Maximum size is 5MB.`);
+          fileInput.value = '';
+          return;
+        }
+        // Validate file type
+        if (!file.type.startsWith('image/')) {
+          alert(`File ${file.name} is not an image.`);
+          fileInput.value = '';
+          return;
+        }
+        selectedFile = file;
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const fileItem = document.createElement('div');
+          fileItem.className = 'file-item';
+          fileItem.innerHTML = `
+                    <img src="${e.target.result}" alt="${file.name}">
+                    <div>${file.name}</div>
+                    <div style="font-size: 0.8rem; color: #666;">${(file.size / 1024 / 1024).toFixed(2)} MB</div>
+                `;
+          filePreview.appendChild(fileItem);
+        };
+        reader.readAsDataURL(file);
+      });
+
+      // Form submission
+      const form = document.getElementById('applicationForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const loading = document.getElementById('loading');
+      const response = document.getElementById('response');
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // Show loading
+        submitBtn.disabled = true;
+        loading.style.display = 'block';
+        response.style.display = 'none';
+
+        try {
+          const formData = new FormData();
+
+          // Add form fields
+          const formFields = [
+            'fullName', 'email', 'citizenNumber', 'contact', 'dateOfBirth', 'gender',
+            'address', 'emergencyContactName', 'emergencyNumber',
+            'emergencyContactRelationship', 'membershipDuration', 'currentStartDate'
+          ];
+
+          formFields.forEach(field => {
+            const value = document.getElementById(field).value;
+            if (value) {
+              formData.append(field, value);
+            }
+          });
+
+          // Add passport image if selected
+          if (selectedFile) {
+            formData.append('passportImage', selectedFile);
+          }
+
+          // Submit to API
+          const apiResponse = await fetch('/api/applications', {
+            method: 'POST',
+            body: formData
+          });
+
+          const result = await apiResponse.json();
+
+          if (apiResponse.ok) {
+            showResponse('success', `
+                        <h3>✅ Application Submitted Successfully!</h3>
+                        <p><strong>Application ID:</strong> ${result.data.applicationId}</p>
+                        <p><strong>Status:</strong> ${result.data.applicationStatus}</p>
+                        <p><strong>Submitted:</strong> ${new Date(result.data.submittedAt).toLocaleString()}</p>
+                        ${result.data.passportImage && result.data.passportImage.filename ?
+                `<p><strong>Passport Image:</strong> Uploaded successfully</p>
+                             <p><strong>Image URL:</strong> <a href="${result.data.passportImage.url}" target="_blank">View Image</a></p>` :
+                '<p><strong>Passport Image:</strong> Not uploaded</p>'
+              }
+                        <pre style="background: #f8f9fa; padding: 10px; border-radius: 4px; overflow-x: auto; margin-top: 10px;">${JSON.stringify(result, null, 2)}</pre>
+                    `);
+
+            // Reset form
+            form.reset();
+            selectedFile = null;
+            filePreview.innerHTML = '';
+            document.getElementById('currentStartDate').valueAsDate = new Date();
+          } else {
+            showResponse('error', `
+                        <h3>❌ Error Submitting Application</h3>
+                        <p><strong>Status:</strong> ${apiResponse.status}</p>
+                        <p><strong>Message:</strong> ${result.message || 'Unknown error'}</p>
+                        <pre style="background: #f8f9fa; padding: 10px; border-radius: 4px; overflow-x: auto; margin-top: 10px;">${JSON.stringify(result, null, 2)}</pre>
+                    `);
+          }
+        } catch (error) {
+          showResponse('error', `
+                    <h3>❌ Network Error</h3>
+                    <p>${error.message}</p>
+                `);
+        } finally {
+          // Hide loading
+          submitBtn.disabled = false;
+          loading.style.display = 'none';
+        }
+      });
+
+      function showResponse(type, message) {
+        response.className = `response ${type}`;
+        response.innerHTML = message;
+        response.style.display = 'block';
+
+        // Scroll to response
+        response.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Add some sample data for testing
+      function fillSampleData() {
+        document.getElementById('fullName').value = 'John Doe';
+        document.getElementById('email').value = 'john.doe@example.com';
+        document.getElementById('citizenNumber').value = 'CITZ123456789';
+        document.getElementById('contact').value = '1234567890';
+        document.getElementById('dateOfBirth').value = '1990-01-01';
+        document.getElementById('gender').value = 'male';
+        document.getElementById('address').value = '123 Main Street, City, State 12345';
+        document.getElementById('emergencyContactName').value = 'Jane Doe';
+        document.getElementById('emergencyNumber').value = '0987654321';
+        document.getElementById('emergencyContactRelationship').value = 'Spouse';
+        document.getElementById('membershipDuration').value = '6';
+      }
+
+      // Add a button to fill sample data (for testing)
+      const sampleDataBtn = document.createElement('button');
+      sampleDataBtn.type = 'button';
+      sampleDataBtn.textContent = 'Fill Sample Data';
+      sampleDataBtn.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+        `;
+      sampleDataBtn.onclick = fillSampleData;
+      document.body.appendChild(sampleDataBtn);
+    </script>
+  </body>
+
+</html>

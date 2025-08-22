@@ -4,10 +4,105 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recent event detail</title>
+    <title>Event detail</title>
+    <link rel="icon" type="image/x-icon" href="src/public/favicon.ico">
+
+
+    <!-- styles -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/src/css/event-detail.css">
+    <link rel="stylesheet" href="/src/css/spinner.css">
+
+    <!-- CDN for Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <!-- scripts -->
+
+
+    <!-- contain api -->
+    <script defer src="/src/js/global.js"></script>
+    <!-- and passed to eventlogic -->
+    <script defer src="/src/js/event.js"></script>
+    <script defer src="/src/js/newsletter.js"></script>
   </head>
 
   <body>
+
+    <main>
+      <div class="container event-detail"></div>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <h2 class="cta-heading">READY TO GROW?</h2>
+        <p class="cta-description">
+          Take the first step toward a stronger, healthier you by claiming your free one-week membership at Knox
+          Barbell. Experience our state-of-the-art facilities, join our energizing classes and see why Knox Barbell is
+          the
+          perfect place to reach your fitness goals.
+        </p>
+        <button class="btn-secondary">Get free trial</button>
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <!-- MAIN FOOTER -->
+        <div class="footer-content">
+          <div class="footer-logo-section">
+            <img src="/src/img/Knox.png" alt="footer-logo" class="logo" />
+            <p>
+              Whether you want to get in shape with a personalized fitness
+              training plan, break a sweat in a team environment
+            </p>
+          </div>
+          <div class="footer-links-section">
+            <h6>Quick Links</h6>
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Events</a></li>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">FAQs</a></li>
+              <li><a href="">Terms & Conditions</a></li>
+              <li><a href="">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-newsletter-section">
+            <h6>Newsletter</h6>
+            <div class="newsletter-input-wrapper">
+              <input type="email" id="newsletterEmail" placeholder="xzy@example.com" required />
+              <button class="btn btn-primary-filled subscribe-btn" onclick="subscribeNewsletter(event)">
+                Subscribe
+              </button>
+            </div>
+
+            <h6>Get in Touch</h6>
+            <ul>
+              <li><a href="">Siddarthanagar - 08, Bhairahawa</a></li>
+              <li><a href="">info@knoxbarbell.com</a></li>
+              <li><a href="">071-123456 , 9715428630</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- FOOTER COPYRIGHT & LICENSE -->
+      <div class="footer-bottom">
+        <div class="container">
+          <span>©2025 Knox Barbell. All Rights Reserved</span>
+          <span>Follow us</span>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- spinner modal -->
+    <div id="newsletterModal" class="modal">
+      <div id="newsletterModalContent" class="modal-content"></div>
+    </div>
 
   </body>
 

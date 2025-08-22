@@ -97,16 +97,13 @@ input {
   outline: none;
   border: none;
   background: transparent;
-  color: var(--white);
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
   border-bottom: 1px solid var(--white);
-  /* Optional: better than no border at all */
 }
 
 input::placeholder {
-  color: var(--white);
   opacity: 1;
 }
 
@@ -145,7 +142,32 @@ input::placeholder {
 }
 
 
+/* no event */
+.no-event-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  background-color: #f9fafb;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
 
+.no-event-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #374151;
+  /* gray-700 */
+}
+
+.no-event-content p {
+  color: #6b7280;
+  /* gray-500 */
+  font-size: 1rem;
+}
 
 /* DIALOG START*/
 .dialog {
@@ -398,7 +420,6 @@ header {
 }
 
 
-/* SIDEBAR */
 /* SIDEBAR */
 .slidebar {
   height: 100vh;
@@ -834,6 +855,7 @@ header {
   border-radius: 30px;
   border: none;
   background-color: #93939380;
+  color: white;
   font-size: 16px;
   outline: none;
 }

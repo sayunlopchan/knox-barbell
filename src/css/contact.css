@@ -175,6 +175,7 @@ a {
   border: 1px solid #ccc;
   font-size: 1rem;
   background-color: #272D38;
+  color: #ccc;
 }
 
 /* Full-width items span across both columns */
@@ -185,7 +186,6 @@ a {
 textarea {
   min-height: 120px;
   resize: vertical;
-  color: white;
 }
 
 

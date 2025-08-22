@@ -12,12 +12,20 @@
     <link rel="stylesheet" href="/src/css/index.css">
     <link rel="stylesheet" href="main.css">
 
+    <link rel="stylesheet" href="/src/css/spinner.css" />
+
     <!-- CDN for Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
     <!-- scripts -->
     <script defer src="main.js"></script>
+
+    <!-- contain api -->
+    <script defer src="/src/js/global.js"></script>
+    <!-- and passed to event/newsletter logic -->
+    <script defer src="/src/js/event.js"></script>
+    <script defer src="/src/js/newsletter.js"></script>
   </head>
 
   <body>
@@ -39,10 +47,10 @@
               <a href="">Siddharthanagar - 08, Bank Colony</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a href="/contact.html">Contact</a>
             </li>
             <li>
-              <a href="">Jobs</a>
+              <a href="/job.html">Jobs</a>
             </li>
           </ul>
           <ul>
@@ -79,10 +87,11 @@
               <a href="contact.html">Contact us</a>
             </li>
           </ul>
-          <button class="btn btn-primary">
+          <button class="btn btn-primary" onclick="window.location.href='application.html'">
             <span>Join us</span>
             <i class="fas fa-plus-circle"></i>
           </button>
+
         </nav>
       </div>
       <!-- for screens like tablet and mbl -->
@@ -94,6 +103,8 @@
       </div>
 
     </header>
+
+
     <main>
       <!-- SLIDEBAR -->
       <div class="slidebar">
@@ -118,7 +129,7 @@
 
         <!-- Action Button -->
         <div class="slidebar-action">
-          <button class="btn btn-primary">Join Now</button>
+          <button class="btn btn-primary" onclick="window.location.href='application.html'">Join Now</button>
         </div>
 
         <!-- Social Media Links -->
@@ -139,7 +150,7 @@
       <section class="hero-section border-bottom">
         <div class="hero-content">
           <h1 class="hero-title">PUSH YOUR LIMITS <br> WITH US</h1>
-          <button class="btn btn-primary-filled">JOIN NOW</button>
+          <button class="btn btn-primary-filled" onclick="window.location.href='application.html'">JOIN NOW</button>
         </div>
       </section>
 
@@ -177,8 +188,8 @@
           </div>
         </div>
         <video class="promo-video" controls poster="thumbnail.jpg">
-          <source src="video.mp4" type="video/mp4">
-          <source src="video.webm" type="video/webm">
+          <source src="" type="video/mp4">
+          <source src="" type="video/webm">
           Your browser does not support the video tag.
         </video>
       </section>
@@ -269,7 +280,7 @@
           </div>
 
           <!-- Event Cards START -->
-          <div class="event-card">
+          <!-- <div class="event-card">
             <div class="event-card-header">
               <h3>UPCOMING KNOX BARBELL EVENTS</h3>
               <div class="event-location">
@@ -286,29 +297,10 @@
             <div class="event-card-footer">
               <button class="btn-secondary">JOIN EVENT</button>
             </div>
-          </div>
+          </div> -->
 
-          <!-- Duplicate the card for more events -->
-          <div class="event-card">
-            <div class="event-card-header">
-              <h3>UPCOMING KNOX BARBELL EVENTS</h3>
-              <div class="event-location">
-                <p>LOCATION</p>
-                <p>Fitness Convention Center, Bank Colony</p>
-              </div>
-            </div>
-            <div class="event-card-details">
-              <span>DATE</span>
-              <span>TIME</span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum sint, reprehenderit iste alias eius...
-              </p>
-            </div>
-            <div class="event-card-footer">
-              <button class="btn-secondary">JOIN EVENT</button>
-            </div>
-          </div>
-
-          <!-- Add more event cards as needed -->
+          <!-- Dynamic Event Cards will be inserted here -->
+          <div id="eventCardsContainer"></div>
           <!-- Event Cards END -->
         </div>
       </section>
@@ -324,7 +316,7 @@
             </div>
 
             <p class="testimonial-share-text">SHARE YOUR EXPERIENCE</p>
-            <button class="btn-secondary">JOIN EVENT</button>
+            <button class="btn-secondary" onclick="window.location.href='events.html'">JOIN EVENT</button>
 
             <div class="testimonial-metrics">
               <h4>
@@ -489,16 +481,17 @@
 
     </main>
 
-
     <!-- FOOTER -->
     <footer class="site-footer">
       <div class="container">
         <!-- MAIN FOOTER -->
         <div class="footer-content">
           <div class="footer-logo-section">
-            <img src="/src/img/Knox.png" alt="footer-logo" class="logo">
-            <p>Whether you want to get in shape with a personalized fitness training plan, break a sweat in a team
-              environment</p>
+            <img src="/src/img/Knox.png" alt="footer-logo" class="logo" />
+            <p>
+              Whether you want to get in shape with a personalized fitness
+              training plan, break a sweat in a team environment
+            </p>
           </div>
           <div class="footer-links-section">
             <h6>Quick Links</h6>
@@ -515,9 +508,12 @@
           <div class="footer-newsletter-section">
             <h6>Newsletter</h6>
             <div class="newsletter-input-wrapper">
-              <input type="text" placeholder="xzy@example.com">
-              <button class="btn btn-primary-filled subscribe-btn">Subscribe</button>
+              <input type="email" id="newsletterEmail" placeholder="xzy@example.com" required />
+              <button class="btn btn-primary-filled subscribe-btn" onclick="subscribeNewsletter(event)">
+                Subscribe
+              </button>
             </div>
+
             <h6>Get in Touch</h6>
             <ul>
               <li><a href="">Siddarthanagar - 08, Bhairahawa</a></li>
@@ -537,6 +533,10 @@
     </footer>
 
 
+    <!-- spinner modal -->
+    <div id="newsletterModal" class="modal">
+      <div id="newsletterModalContent" class="modal-content"></div>
+    </div>
 
     <script>
       // FAQ logic

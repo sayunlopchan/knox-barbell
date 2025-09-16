@@ -37,13 +37,10 @@
         <nav class="top-nav">
           <ul>
             <li>
-              <a href="">(+977)-123456</a>
+              <a href="tel:+977123456">(+977)-123456</a>
             </li>
             <li>
               <a href="">Siddharthanagar - 08, Bank Colony</a>
-            </li>
-            <li>
-              <a href="/contact.html">Contact</a>
             </li>
             <li>
               <a href="/job.html">Jobs</a>
@@ -51,11 +48,11 @@
           </ul>
           <ul>
             <!-- Facebook -->
-            <a href="">
+            <a href="https://www.facebook.com/23knoxbarbell">
               <i class="fab fa-facebook"></i>
             </a>
             <!-- Instagram -->
-            <a href="">
+            <a href="https://www.instagram.com/23knox_barbell">
               <i class="fab fa-instagram"></i>
             </a>
             <a href="">
@@ -92,6 +89,7 @@
       </div>
       <!-- for screens like tablet and mbl -->
 
+      <!-- HAMBURGER MENU -->
       <div class="hamburger">
         <span></span>
         <span></span>
@@ -152,18 +150,7 @@
       </section>
 
 
-
-      <!-- APPLICATION FORM -->
-      <!-- <section class="container">
-        <h2>Membership Application Form</h2>
-        <p>Join the ultimate fitness experience</p>
-        <div class="form-container">
-
-        </div>
-      </section> -->
-
-
-
+      <!-- application form-->
       <div class="container">
         <div class="app-header">
           <h4>Membership Application Form</h4>
@@ -187,8 +174,8 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="email">Email Address</label>
-                  <input type="email" id="email" placeholder="Enter email address" required>
+                  <label for="email">Email Address (optional)</label>
+                  <input type="email" id="email" placeholder="Enter email address">
                 </div>
               </div>
 
@@ -211,7 +198,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label>Gender</label>
+                  <label class="radio-label">Gender</label>
                   <div class="radio-group">
                     <div class="radio-option">
                       <input type="radio" id="male" name="gender" value="male" required>
@@ -227,28 +214,31 @@
                     </div>
                   </div>
                 </div>
+                <div class="form-group">
+                  <label for="photo">Upload Photo (optional)</label>
+                  <input type="file" id="photo" accept="image/*">
+                </div>
               </div>
             </div>
-
             <div class="form-section">
               <h2>Emergency Information</h2>
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="emergencyName">Full Name</label>
-                  <input type="text" id="emergencyName" placeholder="Enter full name" required>
+                  <label for="emergencyName">Full Name (optional)</label>
+                  <input type="text" id="emergencyName" placeholder="Enter full name">
                 </div>
 
                 <div class="form-group">
-                  <label for="relationship">Relationship</label>
-                  <input type="text" id="relationship" placeholder="Enter relationship" required>
+                  <label for="relationship">Relationship (optional)</label>
+                  <input type="text" id="relationship" placeholder="Enter relationship">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="emergencyContact">Contact No.</label>
-                  <input type="tel" id="emergencyContact" placeholder="Enter contact number" required>
+                  <label for="emergencyContact">Contact No. (optional)</label>
+                  <input type="tel" id="emergencyContact" placeholder="Enter contact number">
                 </div>
               </div>
             </div>
@@ -258,14 +248,14 @@
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="membershipType">Membership Type</label>
+                  <label for="membershipType">Membership Duration</label>
                   <select id="membershipType" required>
                     <option value="">Select Membership Type</option>
-                    <option value="basic">Basic</option>
-                    <option value="premium">Premium</option>
-                    <option value="vip">VIP</option>
-                    <option value="student">Student</option>
-                    <option value="corporate">Corporate</option>
+                    <option value="basic">1 Month</option>
+                    <option value="premium">3 Months</option>
+                    <option value="vip">6 Months</option>
+                    <option value="student">1 Year</option>
+                    <option value="corporate">2 Years</option>
                   </select>
                 </div>
 
@@ -274,24 +264,34 @@
                   <input type="date" id="startDate" required>
                 </div>
               </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea id="message"
-                    placeholder="Please specify here if you want personal training or group class"></textarea>
-                </div>
-              </div>
             </div>
+
             <div class="form-btn">
               <button type="submit">Submit</button>
             </div>
           </form>
+
         </div>
       </div>
 
-
-
+      <!-- REUSABLE SUPPORT BANNER -->
+      <section class="support-banner">
+        <div class="support-banner-wrapper container">
+          <!-- Text Content -->
+          <div class="support-banner-content">
+            <h6 class="support-banner-title">We're Here to Assist You</h6>
+            <p class="support-banner-description">
+              Whether you have questions about our membership plans, upcoming events, or simply need some fitness
+              advice, don’t hesitate to contact us. Our dedicated team is here to assist you on your fitness journey,
+              providing support, motivation, and guidance every step of the way.
+            </p>
+          </div>
+          <!-- Centered Button -->
+          <div class="support-banner-action">
+            <button class="btn btn-secondary support-banner-btn">Ask a Question</button>
+          </div>
+        </div>
+      </section>
 
     </main>
 

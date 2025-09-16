@@ -189,20 +189,8 @@ textarea {
 }
 
 
-/* CONTACT SUPPORT SECTION */
-.contact-support-wrapper {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 2rem;
-}
 
-.contact-support-wrapper,
-.contact-support-action {
-  justify-content: center;
-  align-content: center;
-}
-
-/* Contact Section Responsive Layout */
+/* Responsive Layout */
 @media (max-width: 768px) {
   .contact-section>.container {
     grid-template-columns: 1fr;
@@ -230,15 +218,6 @@ textarea {
     align-self: flex-end;
   }
 
-
-  .contact-support-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-support-action {
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 /* Optional: Improve spacing for small screens */

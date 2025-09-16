@@ -119,8 +119,6 @@
 
 
 
-
-
 /* VIDEO SECTION */
 .video-text {
   width: 60%;
@@ -224,6 +222,11 @@
 .events-container {
   display: grid;
   gap: 5rem;
+}
+
+#eventCardsContainer {
+  display: grid;
+  gap: 2rem;
 }
 
 .event-card {

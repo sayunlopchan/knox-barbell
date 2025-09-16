@@ -14,6 +14,7 @@
 
 
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="/css/utils.css" />
     <link rel="stylesheet" href="/src/css/faqs.css" />
 
     <link rel="stylesheet" href="/src/css/spinner.css" />
@@ -21,6 +22,7 @@
 
     <script defer src="main.js"></script>
     <!-- contain api -->
+    <script defer src="/src/js/trail_contact.js"></script>
     <script defer src="/src/js/global.js"></script>
     <!-- and passed to newsletter logic -->
     <script defer src="/src/js/newsletter.js"></script>
@@ -30,7 +32,7 @@
     <header class="container">
       <div class="logo-wrapper">
         <a href="/">
-          <img src="/src/img/Knox.png" alt="knox barbell logo" class="logo" />
+          <img src="/src/img/Knox.png" alt="knox barbell logo" class="logo">
         </a>
       </div>
 
@@ -39,25 +41,22 @@
         <nav class="top-nav">
           <ul>
             <li>
-              <a href="">(+977)-123456</a>
+              <a href="tel:+977123456">(+977)-123456</a>
             </li>
             <li>
               <a href="">Siddharthanagar - 08, Bank Colony</a>
             </li>
             <li>
-              <a href=""> Contact</a>
-            </li>
-            <li>
-              <a href="">Jobs</a>
+              <a href="/job.html">Jobs</a>
             </li>
           </ul>
           <ul>
             <!-- Facebook -->
-            <a href="">
+            <a href="https://www.facebook.com/23knoxbarbell">
               <i class="fab fa-facebook"></i>
             </a>
             <!-- Instagram -->
-            <a href="">
+            <a href="https://www.instagram.com/23knox_barbell">
               <i class="fab fa-instagram"></i>
             </a>
             <a href="">
@@ -66,7 +65,7 @@
             </a>
           </ul>
         </nav>
-        <hr />
+        <hr>
         <nav class="bottom-nav">
           <ul>
             <li>
@@ -79,24 +78,28 @@
               <a href="events.html">Events</a>
             </li>
             <li>
-              <a class="active-page" href="faqs.html">FAQs</a>
+              <a href="faqs.html" class="active-page">FAQs</a>
             </li>
             <li>
               <a href="contact.html">Contact us</a>
             </li>
           </ul>
-          <button class="btn btn-primary">
+          <button class="btn btn-primary" onclick="window.location.href='application.html'">
             <span>Join us</span>
             <i class="fas fa-plus-circle"></i>
           </button>
+
         </nav>
       </div>
       <!-- for screens like tablet and mbl -->
+
+      <!-- HAMBURGER MENU -->
       <div class="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </div>
+
     </header>
     <main>
       <!-- SLIDEBAR -->
@@ -171,31 +174,29 @@
           <div class="trial-content">
             <h2 class="trial-title">NOT LIKE ANY OTHER GYM IN BHAIRAHAWA</h2>
             <p class="trial-description">
-              Whether you want to get in shape with a personalized fitness
-              training plan, break a sweat in a team environment, or reach peak
-              athletic performance, our group of expert fitness coaches and
-              community members are here to help you be your best self, every
-              day.
+              Whether you want to get in shape with a personalized fitness training plan, break a sweat in a team
+              environment, or reach peak athletic performance, our group of expert fitness coaches and community members
+              are here to help you be your best self, every day.
             </p>
           </div>
           <div class="trial-form-wrapper">
             <div class="trial-form-container">
               <div class="trial-heading">SPECIAL TRIAL OFFER</div>
               <span class="trial-subheading">Sign up to begin your 2-weeks trial membership</span>
-              <form class="trial-form" action="">
+              <form class="trial-form" onsubmit="sendTrialForm(event)">
                 <div class="form-group">
-                  <input type="text" class="form-input" placeholder="FIRST NAME" />
+                  <input type="text" name="FN" class="form-input" placeholder="FIRST NAME" required>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-input" placeholder="LAST NAME" />
+                  <input type="text" name="LN" class="form-input" placeholder="LAST NAME" required>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-input" placeholder="EMAIL" />
+                  <input type="email" name="email" class="form-input" placeholder="EMAIL" required>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-input" placeholder="PHONE" />
+                  <input type="text" name="phone" class="form-input" placeholder="PHONE" required>
                 </div>
-                <button class="btn btn-primary-filled">SUBMIT</button>
+                <button type="submit" class="btn btn-primary-filled">SUBMIT</button>
               </form>
             </div>
           </div>
@@ -259,7 +260,10 @@
     <div id="newsletterModal" class="modal">
       <div id="newsletterModalContent" class="modal-content"></div>
     </div>
-
+    <!-- spinner modal -->
+    <div id="emailModal" class="modal">
+      <div id="modalContent" class="modal-content"></div>
+    </div>
 
     <script>
       const faqList2 = document.querySelector(".faq-list-2");

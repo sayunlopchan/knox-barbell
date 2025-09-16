@@ -11,7 +11,7 @@
     <!-- styles -->
     <link rel="stylesheet" href="/src/css/index.css">
     <link rel="stylesheet" href="main.css">
-
+    <link rel="stylesheet" href="/src/css/utils.css">
     <link rel="stylesheet" href="/src/css/spinner.css" />
 
     <!-- CDN for Font Awesome -->
@@ -24,6 +24,7 @@
     <!-- contain api -->
     <script defer src="/src/js/global.js"></script>
     <!-- and passed to event/newsletter logic -->
+    <script defer src="/src/js/trail_contact.js"></script>
     <script defer src="/src/js/event.js"></script>
     <script defer src="/src/js/newsletter.js"></script>
   </head>
@@ -41,13 +42,10 @@
         <nav class="top-nav">
           <ul>
             <li>
-              <a href="">(+977)-123456</a>
+              <a href="tel:+977123456">(+977)-123456</a>
             </li>
             <li>
               <a href="">Siddharthanagar - 08, Bank Colony</a>
-            </li>
-            <li>
-              <a href="/contact.html">Contact</a>
             </li>
             <li>
               <a href="/job.html">Jobs</a>
@@ -55,11 +53,11 @@
           </ul>
           <ul>
             <!-- Facebook -->
-            <a href="">
+            <a href="https://www.facebook.com/23knoxbarbell">
               <i class="fab fa-facebook"></i>
             </a>
             <!-- Instagram -->
-            <a href="">
+            <a href="https://www.instagram.com/23knox_barbell">
               <i class="fab fa-instagram"></i>
             </a>
             <a href="">
@@ -96,6 +94,7 @@
       </div>
       <!-- for screens like tablet and mbl -->
 
+      <!-- HAMBURGER MENU -->
       <div class="hamburger">
         <span></span>
         <span></span>
@@ -316,7 +315,9 @@
             </div>
 
             <p class="testimonial-share-text">SHARE YOUR EXPERIENCE</p>
-            <button class="btn-secondary" onclick="window.location.href='events.html'">JOIN EVENT</button>
+            <div>
+              <button class="btn-third" onclick="window.location.href='review.html'">Give Review</button>
+            </div>
 
             <div class="testimonial-metrics">
               <h4>
@@ -340,9 +341,10 @@
                 <div class="testimonial-user-info">
                   <div class="testimonial-user-meta">
                     <h5>Client Name</h5>
-                    <span>4/5</span>
+                    <span>5/5</span>
                   </div>
                   <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -361,9 +363,10 @@
                 <div class="testimonial-user-info">
                   <div class="testimonial-user-meta">
                     <h5>Client Name</h5>
-                    <span>4/5</span>
+                    <span>5/5</span>
                   </div>
                   <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -391,25 +394,26 @@
             <div class="trial-form-container">
               <div class="trial-heading">SPECIAL TRIAL OFFER</div>
               <span class="trial-subheading">Sign up to begin your 2-weeks trial membership</span>
-              <form class="trial-form" action="">
+              <form class="trial-form" onsubmit="sendTrialForm(event)">
                 <div class="form-group">
-                  <input type="text" class="form-input" placeholder="FIRST NAME">
+                  <input type="text" name="FN" class="form-input" placeholder="FIRST NAME" required>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-input" placeholder="LAST NAME">
+                  <input type="text" name="LN" class="form-input" placeholder="LAST NAME" required>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-input" placeholder="EMAIL">
+                  <input type="email" name="email" class="form-input" placeholder="EMAIL" required>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-input" placeholder="PHONE">
+                  <input type="text" name="phone" class="form-input" placeholder="PHONE" required>
                 </div>
-                <button class="btn btn-primary-filled">SUBMIT</button>
+                <button type="submit" class="btn btn-primary-filled">SUBMIT</button>
               </form>
             </div>
           </div>
         </div>
       </section>
+
 
       <!-- CTA-SECTION -->
       <section class="cta-section">
@@ -496,13 +500,13 @@
           <div class="footer-links-section">
             <h6>Quick Links</h6>
             <ul>
-              <li><a href="">Home</a></li>
-              <li><a href="">About Us</a></li>
-              <li><a href="">Events</a></li>
-              <li><a href="">Contact Us</a></li>
-              <li><a href="">FAQs</a></li>
-              <li><a href="">Terms & Conditions</a></li>
-              <li><a href="">Privacy Policy</a></li>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./events.html">Events</a></li>
+              <li><a href="./contact.html">Contact Us</a></li>
+              <li><a href="./faqs.html">FAQs</a></li>
+              <li><a href="./terms&condition.html">Terms & Conditions</a></li>
+              <li><a href="./privacy-policy.html">Privacy Policy</a></li>
             </ul>
           </div>
           <div class="footer-newsletter-section">
@@ -532,6 +536,10 @@
       </div>
     </footer>
 
+    <!-- spinner modal -->
+    <div id="emailModal" class="modal">
+      <div id="modalContent" class="modal-content"></div>
+    </div>
 
     <!-- spinner modal -->
     <div id="newsletterModal" class="modal">

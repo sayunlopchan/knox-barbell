@@ -75,7 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => {
       console.error("Failed to fetch events:", error);
-      container.innerHTML = `<p>Unable to load events at this time. Please try again later.</p>`;
+      container.innerHTML = `
+      <div class="no-event-card">
+        <div class="no-event-content">
+          <p>Unable to load events at this time. Please try again later.</p>
+        </div>
+      </div>
+      `;
     });
 });
 
@@ -322,7 +328,14 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((err) => {
       console.error("Failed to fetch events:", err);
-      container.innerHTML = `<p class="text-center py-10">Unable to load events at this time.</p>`;
+      container.innerHTML = `
+      <div class="no-event-card">
+        <div class="no-event-content">
+          <h2>Unable to load events at this time.</h2>
+          <p>Please try again later.</p>
+        </div>
+      </div>
+      `;
     });
 });
 
@@ -413,10 +426,9 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((err) => {
       console.error("Failed to fetch recent events", err);
-      const container = document.getElementById("recentEventsContainer");
       const wrapper = document.getElementById("recentEventsWrapper");
 
-      const target = container || wrapper;
+      const target = wrapper;
       if (target) {
         target.innerHTML = `
           <div class="no-event-card">

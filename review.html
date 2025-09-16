@@ -4,21 +4,17 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Knox Barbell</title>
+    <title>Knox barbell Ratings & Reviews</title>
+
     <!-- CDN for Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- styles -->
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="/src/css/blog-insight.css">
-
-    <link rel="stylesheet" href="/src/css/spinner.css" />
-    <!-- script -->
+    <link rel="stylesheet" href="./src/css/review.css">
+    <script defer src="./src/js/global.js"></script>
+    <script defer src="./src/js/review.js"></script>
+    <script defer src="./src/js/newsletter.js"></script>
     <script defer src="main.js"></script>
-    <!-- contain api -->
-    <script defer src="/src/js/global.js"></script>
-    <!-- and passed to newsletter logic -->
-    <script defer src="/src/js/newsletter.js"></script>
   </head>
 
   <body>
@@ -34,7 +30,7 @@
         <nav class="top-nav">
           <ul>
             <li>
-              <a href="tel:+977123456">(+977)-123456</a>
+              <a href="">(+977)-123456</a>
             </li>
             <li>
               <a href="">Siddharthanagar - 08, Bank Colony</a>
@@ -45,11 +41,11 @@
           </ul>
           <ul>
             <!-- Facebook -->
-            <a href="https://www.facebook.com/23knoxbarbell">
+            <a href="">
               <i class="fab fa-facebook"></i>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/23knox_barbell">
+            <a href="">
               <i class="fab fa-instagram"></i>
             </a>
             <a href="">
@@ -86,7 +82,6 @@
       </div>
       <!-- for screens like tablet and mbl -->
 
-      <!-- HAMBURGER MENU -->
       <div class="hamburger">
         <span></span>
         <span></span>
@@ -94,8 +89,6 @@
       </div>
 
     </header>
-
-
     <main>
       <!-- SLIDEBAR -->
       <div class="slidebar">
@@ -120,7 +113,7 @@
 
         <!-- Action Button -->
         <div class="slidebar-action">
-          <button class="btn btn-primary">Join Now</button>
+          <button class="btn btn-primary" onclick="window.location.href='application.html'">Join Now</button>
         </div>
 
         <!-- Social Media Links -->
@@ -129,7 +122,6 @@
           <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" target="_blank" aria-label="X/Twitter"><i class="fab fa-x-twitter"></i></a>
         </div>
-
 
         <!-- Sidebar Footer -->
         <div class="slidebar-footer">
@@ -140,79 +132,70 @@
 
       <!-- HERO -->
       <section class="hero-section border-bottom">
-        <div class="hero-content">
-          <h1 class="hero-title">PUSH YOUR LIMITS <br> WITH US</h1>
-          <button class="btn btn-primary-filled">JOIN NOW</button>
-        </div>
+        <div class="container">
+          <div class="text-wrapper">
+            <h1>Knox Barbell</h1>
+            <p>Knox Barbell is a barbell that is used to lift weights. It is a great tool for lifting weights. It is a
+              great tool for lifting weights.</p>
+          </div>
+          <div class="review-form">
+            <h2>Add Your Review</h2>
+            <form id="ratingForm">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" required placeholder="Enter your name">
+
+              <label for="rating">Rating *</label>
+              <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5" required>
+                <label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+              </div>
+
+              <label for="review">Review *</label>
+              <textarea id="review" name="review" rows="4" required placeholder="Share your experience..."></textarea>
+
+              <label for="photo">Photo (optional)</label>
+              <input type="file" id="photo" name="photo" accept="image/*">
+
+              <button class="review-btn" type="submit">Submit Review</button>
+            </form>
+          </div>
       </section>
 
-      <!-- Blog Insight Detail -->
-      <section class="blog-detail-section container">
 
-        <h2>GET THE LATEST TIPS FOR TRAINING</h2>
-
-        <div class="blog-detail-grid">
-          <!-- Left Content -->
-          <div class="blog-detail-left">
-            <div class="blog-detail-image">
-              <!-- image here -->
+      <!-- Review -->
+      <section class="review-section">
+        <div class="container">
+          <div class="stats-container">
+            <div class="stats-item">
+              <h3 id="averageRating">0</h3>
+              <p>Total Average Rating</p>
             </div>
-
-            <p>
-              Take the first step toward a stronger, healthier you by claiming your free one-week membership at Knox
-              Barbell. Experience our state-of-the-art facilities, join our energizing classes and see why Knox Barbell
-              is the perfect place to reach your fitness goals.
-            </p>
-
-            <h4 class="blog-detail-heading">GET THE LATEST TIPS FOR TRAINING</h4>
-
-            <p>
-              Take the first step toward a stronger, healthier you by claiming your free one-week membership at Knox
-              Barbell. Experience our state-of-the-art facilities, join our energizing classes and see why Knox Barbell
-              is the perfect place to reach your fitness goals.
-            </p>
-
-            <p>
-              Take the first step toward a stronger, healthier you by claiming your free one-week membership at Knox
-              Barbell. Experience our state-of-the-art facilities, join our energizing classes and see why Knox Barbell
-              is the perfect place to reach your fitness goals.
-            </p>
-
-            <h4 class="blog-detail-heading">GET THE LATEST TIPS FOR TRAINING</h4>
-
-            <p>
-              Take the first step toward a stronger, healthier you by claiming your free one-week membership at Knox
-              Barbell. Experience our state-of-the-art facilities, join our energizing classes and see why Knox Barbell
-              is the perfect place to reach your fitness goals.
-            </p>
+            <div class="stats-item">
+              <h3 id="totalReviews">0</h3>
+              <p>Total Reviews</p>
+            </div>
+            <div class="stats-item">
+              <h3 id="recommendPercentage">0%</h3>
+              <p>Recommendation Score</p>
+            </div>
           </div>
-
-          <!-- Right Sidebar -->
-          <div class="blog-detail-right">
-            <!-- Reserved for future ads, links, or related content -->
-            <div class="box"></div>
-            <div class="box"></div>
+          <div id="reviewsList">
+            <div class="loading">
+              <i class="fas fa-spinner fa-spin"></i>
+              <p>Loading reviews...</p>
+            </div>
           </div>
-
         </div>
-      </section>
-
-
-      <!-- CTA-SECTION -->
-      <section class="cta-section">
-        <h2 class="cta-heading">READY TO GROW?</h2>
-        <p class="cta-description">
-          Take the first step toward a stronger, healthier you by claiming your free one-week membership at Knox
-          Barbell.
-          Experience our state-of-the-art facilities, join our energizing classes and see why Knox Barbell is the
-          perfect
-          place to reach your fitness goals.
-        </p>
-        <button class="btn-secondary">Get free trial</button>
       </section>
     </main>
-
-
     <!-- FOOTER -->
     <footer class="site-footer">
       <div class="container">
@@ -228,13 +211,13 @@
           <div class="footer-links-section">
             <h6>Quick Links</h6>
             <ul>
-              <li><a href="">Home</a></li>
-              <li><a href="">About Us</a></li>
-              <li><a href="">Events</a></li>
-              <li><a href="">Contact Us</a></li>
-              <li><a href="">FAQs</a></li>
-              <li><a href="">Terms & Conditions</a></li>
-              <li><a href="">Privacy Policy</a></li>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./events.html">Events</a></li>
+              <li><a href="./contact.html">Contact Us</a></li>
+              <li><a href="./faqs.html">FAQs</a></li>
+              <li><a href="./terms&condition.html">Terms & Conditions</a></li>
+              <li><a href="./privacy-policy.html">Privacy Policy</a></li>
             </ul>
           </div>
           <div class="footer-newsletter-section">
@@ -269,8 +252,6 @@
     <div id="newsletterModal" class="modal">
       <div id="newsletterModalContent" class="modal-content"></div>
     </div>
-
-
   </body>
 
 </html>

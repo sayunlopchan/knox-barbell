@@ -92,21 +92,6 @@ main {
   height: 100vh;
 }
 
-
-input {
-  outline: none;
-  border: none;
-  background: transparent;
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  border-bottom: 1px solid var(--white);
-}
-
-input::placeholder {
-  opacity: 1;
-}
-
 .border-bottom,
 .border-top {
   border-bottom: 10px solid var(--red);
@@ -160,12 +145,10 @@ input::placeholder {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #374151;
-  /* gray-700 */
 }
 
 .no-event-content p {
   color: #6b7280;
-  /* gray-500 */
   font-size: 1rem;
 }
 
@@ -316,6 +299,28 @@ button {
   z-index: -1;
 }
 
+.btn-third {
+  position: relative;
+  background-color: var(--btn-red);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.btn-third::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  background-color: #DADADA38;
+  z-index: -1;
+}
+
+
 
 /* Click Animation */
 button:active {
@@ -380,13 +385,20 @@ header {
 .nav-wrapper>.top-nav a,
 .nav-wrapper>.bottom-nav a {
   color: var(--white);
+  transition: border-bottom 0.1s ease;
+}
+
+.nav-wrapper>.top-nav a:hover,
+.nav-wrapper>.bottom-nav a:hover {
+  border-bottom: 2px solid var(--btn-red);
 }
 
 .nav-wrapper>.top-nav,
 .nav-wrapper>.bottom-nav {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 10px 0 10px 15vw;
+
 }
 
 .nav-wrapper>nav {
@@ -524,7 +536,8 @@ header {
 /* HERO */
 .hero-section {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: fit-content;
   overflow: hidden;
 }
 
@@ -784,6 +797,43 @@ header {
 }
 
 
+/* SUPPORT BANNER */
+.support-banner-wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  background-color: #272D38;
+  padding: 2.5rem;
+  border-radius: 15px;
+  align-items: center;
+  /* Vertically center the two grid columns */
+}
+
+.support-banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* space between title and description */
+}
+
+.support-banner-title {
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.support-banner-description {
+  color: #A3A3A3;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.support-banner-action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 
 /* FOOTER BASE STYLES */
 .site-footer {
@@ -959,6 +1009,15 @@ header {
 
   .testimonial-card {
     padding: 1rem;
+  }
+
+  .support-banner-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .support-banner-action {
+    justify-content: center;
+    align-items: center;
   }
 }
 
